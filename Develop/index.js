@@ -57,28 +57,28 @@ function init() {
   .then((answers) =>   {
     const {ProjName, ProjFunc, ProjInstall, ProjExample, ProjContributors, license, licBadge} = answers
     const templateReadMe = 
-    `# ${ProjName}
+`# ${ProjName} Description
     
-    ## ${ProjName} Description
+${ProjFunc}
     
-    ${ProjFunc}
+# ${ProjName} Installation requirements
+
+\`\`\`bash
+${ProjInstall}
+\`\`\`
+
     
-    ##  ${ProjName} Installation requirements
-    \`\`\`bash
-    ${ProjInstall}
-    \`\`\`
+# ${ProjName} Usage
     
-    ## ${ProjName} Usage
+${ProjExample}
     
-    ${ProjExample}
+# ${ProjName} Contributors
     
-    ## ${ProjName} Contributors
+${ProjContributors}
     
-    ${ProjContributors}
-    
-    ## license
-    [![License: ${license}](https://img.shields.io/badge/License-${license}-${licBadge}.svg)](https://opensource.org/licenses/${license})
-    `;
+# license
+[![License: ${license}](https://img.shields.io/badge/License-${license.replace(/-/g, '--')}-brightgreen.svg)](https://opensource.org/licenses/${license})
+`;
     fs.writeFile('README.MD', templateReadMe, function (err) {
       if (err) throw err;
       console.log('IT WORKED')

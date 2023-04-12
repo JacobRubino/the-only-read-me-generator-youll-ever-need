@@ -1,22 +1,21 @@
-# readmegen
+# Thing Description
     
-    ## readmegen Description
+stuff
     
-    gens readme
+# Thing Installation requirements
+
+```bash
+fs
+```
+
     
-    ##  readmegen Installation requirements
-    ```bash
-    ls fs inquirer
-    ```
+# Thing Usage
     
-    ## readmegen Usage
+answer questions
     
-    plug n go
+# Thing Contributors
     
-    ## readmegen Contributors
+my bestie
     
-    muh bestie
-    
-    ## license
-    [![License: MIT](https://img.shields.io/badge/License-MIT-Blue.svg)](https://opensource.org/licenses/MIT)
-    
+# license
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
