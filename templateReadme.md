@@ -10,7 +10,6 @@
 ${ProjInstall}
 ```
 
-
 ## ${Projname} Usage
 
 ${projExample}
