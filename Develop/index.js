@@ -44,10 +44,10 @@ const questions = [
       name: "licBadge",
       message: "What Badge Design will you use ",
       choices: [
-        "Green",
-        "Blue",
-        "Red",
-        "Purple",
+        "brightgreen",
+        "blue",
+        "red",
+        "blueviolet",
       ],
     },
 ];
@@ -77,7 +77,7 @@ ${ProjExample}
 ${ProjContributors}
     
 # license
-[![License: ${license}](https://img.shields.io/badge/License-${license.replace(/-/g, '--')}-brightgreen.svg)](https://opensource.org/licenses/${license})
+[![License: ${license}](https://img.shields.io/badge/License-${license.replace(/-/g, '--')}-${licBadge}.svg)](https://opensource.org/licenses/${license})
 `;
     fs.writeFile('README.MD', templateReadMe, function (err) {
       if (err) throw err;
