@@ -21,13 +21,23 @@ const questions = [
     {
       type: "input",
       name: "ProjExample",
-      message: "give an example on how to use your project.",
+      message: "How do you install your program?",
     },
     {
       type: "input",
       name: "ProjContributors",
       message: "are there any major contributors you would like to reference?",
+    }, 
+    {
+      type: "text",
+      name: "GHuser",
+      message: "What is your github username?",
     },
+    {
+      type: "text",
+      name: "UserEmail",
+      message: "Please enter your email.",
+    }, 
     {
       type: "list",
       name: "license",
@@ -55,28 +65,38 @@ const questions = [
 function init() {
   inquirer.prompt(questions)
   .then((answers) =>   {
-    const {ProjName, ProjFunc, ProjInstall, ProjExample, ProjContributors, license, licBadge} = answers
+    const {ProjName, ProjFunc, ProjInstall, ProjExample, ProjContributors, license, licBadge, UserEmail, GHuser} = answers
     const templateReadMe = 
-`# ${ProjName} Description
+`# ${ProjName}
     
 ${ProjFunc}
-    
-# ${ProjName} Installation requirements
+
+1. [Installation requirements](#inst)
+2. [Useage](#usage)
+3. [Contributors](#contrib)
+4. [Contact and github](#contact)
+<a name="inst"></a>
+## ${ProjName} Installation requirements
 
 \`\`\`bash
 ${ProjInstall}
 \`\`\`
 
-    
-# ${ProjName} Usage
+<a name="usage"></a>
+## ${ProjName} Usage
     
 ${ProjExample}
-    
-# ${ProjName} Contributors
+<a name="contrib"></a>
+## ${ProjName} Contributors
     
 ${ProjContributors}
+
+<a name="contact"></a>
+## Questions
+If you have any questions please reach me through my email at ${UserEmail}.
+Check out my github! [github.com/${GHuser}](github.com/${GHuser})
     
-# license
+## license
 [![License: ${license}](https://img.shields.io/badge/License-${license.replace(/-/g, '--')}-${licBadge}.svg)](https://opensource.org/licenses/${license})
 `;
     fs.writeFile('README.MD', templateReadMe, function (err) {
