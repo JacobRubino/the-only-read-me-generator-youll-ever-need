@@ -28,15 +28,15 @@ const questions = [
     message: "Are there any major contributors you would like to reference?",
   },
   {
-    type: "text",
-    name: "GHuser",
-    message: "What is your GitHub username?",
-  },
-  {
     type: "input",
     name: "ProjTest",
     message: "Please provide instructions for running tests:",
   },
+  {
+    type: "text",
+    name: "GHuser",
+    message: "What is your GitHub username?",
+  }, 
   {
     type: "text",
     name: "UserEmail",
@@ -67,7 +67,7 @@ const questions = [
 ];
 
 function generateReadme(answers) {
-  const { ProjName, ProjFunc, ProjInstall, ProjExample, ProjContributors, license, licBadge, UserEmail, GHuser } = answers;
+  const { ProjName, ProjFunc, ProjInstall, ProjExample, ProjContributors, license, licBadge, UserEmail, GHuser, ProjTest} = answers;
   const templateReadMe = `
 # ${ProjName}
 
